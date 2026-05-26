@@ -8,6 +8,10 @@ from sklearn.model_selection import train_test_split
 from src.exception import CustomException
 from src.logger import logging
 
+from src.components.data_tranformation import DataTransformation
+
+
+
 
 @dataclass
 class DataIngestionConfig:
@@ -83,3 +87,8 @@ if __name__ == "__main__":
 
     print("Train data saved at:", train_data)
     print("Test data saved at:", test_data)
+
+
+    data_transformation = DataTransformation()
+    data_transformation.initiate_data_transformation(train_data, test_data)
+    
